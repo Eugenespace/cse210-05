@@ -1,8 +1,13 @@
 
+from cgitb import handler
 from retriever import Retriever
 from jumper_guy import Jumper_guy
+from word_handler import Word_handler
+
 
 class Director:
+    
+    
     """A person who directs the game. 
     
     The responsibility of a Director is to control the sequence of play.
@@ -13,12 +18,23 @@ class Director:
         retriever(Retriever) : Retrieves words from a list.
         
         """
+    #retriever = Retriever()
+    
+
 
     def __init__(self):
         self.isPlaying = True
         self.jumper_guy = Jumper_guy 
-        self.retriever = Retriever
-    
+        retriever = Retriever()
+        self.handler = Word_handler()
+
+
+        self.word_set = retriever.get_word_set()
+        
+        self.chosen_word = self.word_set[0]
+        self.letter_count = self.word_set[1]
+        self.blanks = self.word_set[2]
+        
     
     def start_game(self):
         """Starts the game by running the main game loop.
@@ -26,10 +42,23 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
+
+
         while self.isPlaying:
+            self._do_intro()
             self._get_inputs()
             self._do_updates()
             self._do_outputs()
+    
+    def _do_intro(self):
+        #self.jumper_guy.player_guess(guess)
+        ''' ----------Possible outputs----------
+        blanks = .guess_true'''
+        print("Jumper collaboration\n\n")
+        print(self.chosen_word)
+        print(self.blanks)
+        print()
+        pass
     
     def _get_inputs(self):
         """Gets player guess (letter in the puzzle).
@@ -37,8 +66,8 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        guess = input("choose a letter: ")
-        self.jumper_guy.player_guess(guess)
+        self.guess = input("choose a letter: ")
+        return self.guess
         
     def _do_updates(self):
         """Keeps watch on what letter the player will guess.
@@ -46,17 +75,35 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+        #this is where the handler will check the letter against array and update blanks
+        self.valid_guess = Word_handler.guess_check(self.guess,self.letter_count, self.chosen_word)
+        self.blanks = Word_handler.guess_true(self.guess, self.chosen_word, self.blanks)
+        print(self.blanks)
+        if self.valid_guess == True:
+            #Do the true stuff
+            #the blank updated update jumper
+            
+            print("Nailed it")
+        elif self.valid_guess == False:
+            #do the false stuff
+            #update jumper and blanks
+            print("WRONG!")
 
+        #if chosen_letter
+        #return blanks array
+    
   
-        
     def _do_outputs(self):
-        pass
+        print("Output here")
+
+        
+   
       
     
     
     def game_start(self):
         print("Jumper collaboration")
-
+        
         r = Retriever()
         word_set = r.get_word_set()
         print(f"\n\nThe array from .get_word_set is: {word_set}\n\n")
