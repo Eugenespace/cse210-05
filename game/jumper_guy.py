@@ -6,10 +6,12 @@ class Jumper_guy:
 
 #Testing the jumper display:
     def player_guess(self, guess):
+        '''
+        --------Testing-------------
         correct = "a"
         incorrect = "z"
 
-        guess = input("choose a letter: ")
+        guess = input("choose a letter: ")'''
 
 
         j1 = (f"\n _____  ")

@@ -7,14 +7,17 @@ Authors:
   - Aaron Gusa
   - André Pedrosa
 """
+from re import T
 from director import Director
 
 # The main function call other functions to run
 # This mean one entry point
 
 director = Director()
-director.game_start()
 
+#director.game_start()
+
+director.start_game()
 
 
 
