@@ -17,12 +17,8 @@ from jumper_guy import Jumper
 director = Director()
 jumper = Jumper()
 
-#director.game_start()
+# director.game_start()
 
-# director.start_game()
+director.start_game()
 
 jumper.get_parachute()
-
-
-
-
