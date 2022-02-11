@@ -20,8 +20,7 @@ class Jumper:
             print(self._jumperParachute[i])
 
     def get_parachute(self):
-        """creates a parachute array"""
-        # return self._jumperParachute
+        """default jumper guy parachute array"""
 
     def untie_parachute(self, guess):
         """If guess is right the parachute remains intact if not untie the parachute"""
