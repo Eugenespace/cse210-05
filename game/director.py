@@ -46,6 +46,8 @@ class Director:
         # self.jumper_guy.player_guess(guess)
         ''' ----------Possible outputs----------
         blanks = .guess_true'''
+        self.jumper_default = self.jumper_guy
+        print(self.jumper_default.get_parachute())
         print(self.chosen_word)
         print(self.blanks)
         print()
@@ -57,7 +59,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.guess = input("choose a letter: ")
+        self.guess = input("Guess a letter [a-z]: ")
         return self.guess
 
     def _do_updates(self):
