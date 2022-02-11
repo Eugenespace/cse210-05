@@ -46,8 +46,8 @@ class Director:
         # self.jumper_guy.player_guess(guess)
         ''' ----------Possible outputs----------
         blanks = .guess_true'''
-        self.jumper_fly = self.jumper_guy
-        print(self.jumper_fly.get_parachute())
+        self.jumper_default = self.jumper_guy
+        print(self.jumper_default.get_parachute())
         print(self.chosen_word)
         print(self.blanks)
         print()
