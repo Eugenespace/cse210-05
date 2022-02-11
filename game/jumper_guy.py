@@ -7,6 +7,7 @@ class Jumper:
         """Constructs jumper parachute"""
         # self._jumperParachute = [" _____", "/_____\\",
         #                          "\\     /", " \\   /", "   0 ", "  /|\\", "  / \\"]
+        print(f"\n- - - - - -")
         j1 = (f"\n   _____  ")
         j2 = (f"  /_____\ ")
         j3 = (f"  \     /")
