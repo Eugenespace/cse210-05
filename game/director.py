@@ -1,3 +1,4 @@
+from ast import Num
 from retriever import Retriever
 from jumper_guy import Jumper
 from word_handler import Word_handler
@@ -37,20 +38,17 @@ class Director:
         """
 
         while self.isPlaying:
-            self._do_intro()
+            # self._do_intro()
             self._get_inputs()
             self._do_updates()
-            self._do_outputs()
+            # self._do_outputs()
 
     def _do_intro(self):
         # self.jumper_guy.player_guess(guess)
-        ''' ----------Possible outputs----------
-        blanks = .guess_true'''
-        self.jumper_default = self.jumper_guy
-        print(self.jumper_default.get_parachute())
+        print(self.jumper_guy.get_parachute())
         print(self.chosen_word)
-        print(self.blanks)
-        print()
+        # print(self.blanks)
+
         pass
 
     def _get_inputs(self):
@@ -75,17 +73,18 @@ class Director:
             self.guess, self.chosen_word, self.blanks)
         print(self.blanks)
         if self.valid_guess == True:
-            # Do the true stuff
-            # the blank updated update jumper
+            # The chose word is correct
+            # Keep the jumper parachute open
+            self.jumper_guy.untie_parachute()
 
-            print("Nailed it")
         elif self.valid_guess == False:
-            # do the false stuff
-            # update jumper and blanks
+            # If the user input is incorrect
+            # The jumper parachute will be falling
+            self.jumper_guy.fallen_jumper()
             print("WRONG!")
 
         # if chosen_letter
         # return blanks array
 
-    def _do_outputs(self):
-        print("Output here")
+    # def _do_outputs(self):
+    #     print("Output here")
