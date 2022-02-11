@@ -9,6 +9,7 @@ get_word_set returns array in format = [[WORD BROKEN DOWN TO LETTERS], LETTER CO
 import csv
 import random
 
+
 class Retriever:
 
     def __init__(self):
@@ -19,7 +20,7 @@ class Retriever:
         self._total_words = ()
         self._letters = []
         self._letter_hider = []
-    
+
     def get_word_list(self):
         '''
         Read CSV file and return list. Will return file error if file not found.
@@ -31,12 +32,12 @@ class Retriever:
                 for word in words:
                     stripped = word.strip()
                     self._total_words = stripped.split(",")
-                
-                #print(self._total_words)
+
+                # print(self._total_words)
                 return self._total_words
 
         except FileNotFoundError as file_not_found:
-           print(file_not_found)
+            print(file_not_found)
 
     def get_word(self, list):
         '''
@@ -48,9 +49,9 @@ class Retriever:
         '''
         _count = len(list)
         random_seed = random.randint(0, _count)
-        #print(random_seed)
+        # print(random_seed)
         chosen_word = self._total_words[random_seed]
-        #print(chosen_word)
+        # print(chosen_word)
         return chosen_word
 
     def get_letters(self, a_word):
@@ -89,7 +90,7 @@ class Retriever:
                                 Defaulted to letter_count return
         '''
         i = 0
-        
+
         while i < letter_count:
             self._letter_hider.append("_")
             i += 1
@@ -108,7 +109,7 @@ class Retriever:
         letters_array = self.get_letters(word)
         letter_count = self.get_letter_count(letters_array)
         hidden_letter = self.hidden_letters(letter_count)
-        
+
         words_array.append(letters_array)
         words_array.append(letter_count)
         words_array.append(hidden_letter)
@@ -116,7 +117,7 @@ class Retriever:
         return words_array
 
 
-#--------------------- csv_retriever in practice ----------------
+# --------------------- csv_retriever in practice ----------------
 '''
 ## Instantiate Retriever
 r = Retriever()
