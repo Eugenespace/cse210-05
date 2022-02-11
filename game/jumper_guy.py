@@ -2,15 +2,17 @@ class Jumper:
     """Takes care of the Parachute. 
     Attribute:jumper parachute
     """
+
     def __init__(self):
         """Constructs jumper parachute"""
-        self._jumperParachute =[" _____", "/_____\\", "\\     /", " \\   /", "   0 ", "  /|\\", "  / \\"]
+        self._jumperParachute = [" _____", "/_____\\",
+                                 "\\     /", " \\   /", "   0 ", "  /|\\", "  / \\"]
 
     def get_parachute(self):
         """creates a parachute array"""
         return self._jumperParachute
 
-    def untie_parachute(self,guess):
+    def untie_parachute(self, guess):
         """If guess is right the parachute remains intact if not untie the parachute"""
         if guess:
             self._jumperParachute = self._jumperParachute
@@ -22,18 +24,16 @@ class Jumper:
         """if all parachute is untied, set falling to False"""
         falling = True
 
-        if (len(self._jumperParachute)== 3):
+        if (len(self._jumperParachute) == 3):
             self._jumperParachute[0] = " X "
             falling = False
 
         return falling
 
 
-
-
 # class Jumper_guy:
 #     def __init__(self):
-#         self.player_guess 
+#         self.player_guess
 
 
 # #Testing the jumper display:
@@ -74,6 +74,3 @@ class Jumper:
 #             else:
 #                 for i in range(len(jumperGameOver)):
 #                     print (jumperGameOver[i])
-
-
-
