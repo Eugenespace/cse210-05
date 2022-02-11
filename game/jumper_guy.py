@@ -7,7 +7,7 @@ class Jumper:
         """Constructs jumper parachute"""
         # self._jumperParachute = [" _____", "/_____\\",
         #                          "\\     /", " \\   /", "   0 ", "  /|\\", "  / \\"]
-        print(f"\n- - - - - -")
+        # print(f"\n- - - - - -") 
         j1 = (f"\n   _____  ")
         j2 = (f"  /_____\ ")
         j3 = (f"  \     /")
@@ -16,7 +16,14 @@ class Jumper:
         j6 = (f"    /|\  ")
         j7 = (f"    / \  ")
         j8 = (f"\n^ ^ ^ ^ ^ ^ ^")
+
+        jX = (f"\n     X   ")
+        jOver = (f"\nGame Over!\n")
+
         self._jumperParachute = [j1, j2, j3, j4, j5, j6, j7, j8]
+        
+        self.jumperGameOver = [jX, j6, j7, j8, jOver]
+        
         for i in range(len(self._jumperParachute)):
             print(self._jumperParachute[i])
 
@@ -25,21 +32,47 @@ class Jumper:
 
     def untie_parachute(self, guess):
         """If guess is right the parachute remains intact if not untie the parachute"""
+        # if guess:
+        #     self._jumperParachute = self._jumperParachute
+        # else:
+        #     self._jumperParachute.pop(0)
+        # return self._jumperParachute
+
+        # if guess == True:
+        #     for i in range(len(self._jumperParachute)):
+        #         print (self._jumperParachute [i])
+
+        # else:
+
+        
+
         if guess:
-            self._jumperParachute = self._jumperParachute
-        else:
             self._jumperParachute.pop(0)
-        return self._jumperParachute
+            for i in range(len(self._jumperParachute)):
+                print (self._jumperParachute [i])
+
+        # ---Needs some work--- to print game over:
+        # else:
+        #     if self._jumperParachute.pop(0) not in range :
+        #         for i in range(len(self.jumperGameOver)):
+        #             print (self.jumperGameOver[i])
+
 
     def fallen_jumper(self):
         """if all parachute is untied, set falling to False"""
-        falling = True
+        
+        # ---Should this go here? 
+        # for i in range(len(self.jumperGameOver)):
+        #     print (self.jumperGameOver[i])
 
+        falling = True
         if (len(self._jumperParachute) == 3):
             self._jumperParachute[0] = " X "
             falling = False
 
         return falling
+
+        
 
 
 # class Jumper_guy:

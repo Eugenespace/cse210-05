@@ -51,7 +51,7 @@ class Director:
         print(self.chosen_word)
         print(self.blanks)
         print()
-        pass
+        
 
     def _get_inputs(self):
         """Gets player guess (letter in the puzzle).
@@ -83,6 +83,8 @@ class Director:
             # do the false stuff
             # update jumper and blanks
             print("WRONG!")
+            print(self.jumper_default.untie_parachute(self.guess)) 
+            
 
         # if chosen_letter
         # return blanks array
