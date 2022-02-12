@@ -8,11 +8,13 @@ get_word_set returns array in format = [[WORD BROKEN DOWN TO LETTERS], LETTER CO
 '''
 import csv
 import random
+from tkinter import Variable
 
 
 class Retriever:
 
     def __init__(self):
+        # All the variables here are protected (_)
         '''
         Set initial word list file name (csv format), lists and arrays via the constructor.
         '''

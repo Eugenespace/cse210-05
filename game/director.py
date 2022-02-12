@@ -1,4 +1,3 @@
-from ast import Num
 from retriever import Retriever
 from jumper_guy import Jumper
 from word_handler import Word_handler
@@ -16,9 +15,9 @@ class Director:
         retriever(Retriever) : Retrieves words from a list.
 
         """
-    #retriever = Retriever()
 
     def __init__(self):
+        # All the variables here are public it can be access
         self.isPlaying = True
         self.jumper_guy = Jumper()
         retriever = Retriever()
