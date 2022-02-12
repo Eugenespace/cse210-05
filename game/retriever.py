@@ -8,7 +8,6 @@ get_word_set returns array in format = [[WORD BROKEN DOWN TO LETTERS], LETTER CO
 '''
 import csv
 import random
-from tkinter import Variable
 
 
 class Retriever:
