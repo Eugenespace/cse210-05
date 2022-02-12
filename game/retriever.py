@@ -13,6 +13,7 @@ import random
 class Retriever:
 
     def __init__(self):
+        # All the variables here are protected (_)
         '''
         Set initial word list file name (csv format), lists and arrays via the constructor.
         '''
