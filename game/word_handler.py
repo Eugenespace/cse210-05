@@ -25,7 +25,3 @@ class Word_handler:
                 blanks[i] = guess
 
         return blanks
-
-    def guess_false(guess, blanks):
-        #
-        pass

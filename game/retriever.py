@@ -114,18 +114,4 @@ class Retriever:
         words_array.append(letters_array)
         words_array.append(letter_count)
         words_array.append(hidden_letter)
-
         return words_array
-
-
-# --------------------- csv_retriever in practice ----------------
-'''
-## Instantiate Retriever
-r = Retriever()
-
-## set get_word_set to return array containing [0] revealed word, [1] letter count, [2] blanks for letters
-custom_word = r.get_word_set()
-
-## output 
-print(custom_word)
-'''
