@@ -8,6 +8,8 @@ class Jumper:
         # This variable is private (__)
         self.__num = 0
 
+        self.__dead = False
+
         j1 = (f"\n   _____  ")
         j2 = (f"  /_____\ ")
         j3 = (f"  \     /")
@@ -37,8 +39,17 @@ class Jumper:
     def fallen_jumper(self):
         """if all parachute is untied, set falling to False"""
         self._jumperParachute.pop(self.__num)
-        for i in range(len(self._jumperParachute)):
-            print(self._jumperParachute[i])
+
+        if len(self._jumperParachute) >= 5:
+            for i in range(len(self._jumperParachute)):
+                print(self._jumperParachute[i])
+        else:
+            for i in range(len(self.jumperGameOver)):
+                print(self.jumperGameOver[i])
+                self.__dead = True
+    
+    def is_dead(self):
+        return self.__dead
 
 
 # class Jumper_guy:

@@ -40,6 +40,8 @@ class Director:
             # self._do_intro()
             self._get_inputs()
             self._do_updates()
+            if self.jumper_guy.is_dead():
+                self.isPlaying = False
             # self._do_outputs()
 
     def _do_intro(self):

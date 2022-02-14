@@ -8,6 +8,7 @@ get_word_set returns array in format = [[WORD BROKEN DOWN TO LETTERS], LETTER CO
 '''
 import csv
 import random
+import os
 
 
 class Retriever:
@@ -17,7 +18,10 @@ class Retriever:
         '''
         Set initial word list file name (csv format), lists and arrays via the constructor.
         '''
-        self._file = "cse210-05/game/words_source.csv"
+        script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
+        relative_path = "words_source.csv"
+        absolute_file_path = os.path.join(script_dir, relative_path)
+        self._file = absolute_file_path
         self._total_words = ()
         self._letters = []
         self._letter_hider = []
