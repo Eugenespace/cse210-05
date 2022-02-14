@@ -37,15 +37,12 @@ class Director:
         """
 
         while self.isPlaying:
-            # self._do_intro()
             self._get_inputs()
             self._do_updates()
             if self.jumper_guy.is_dead():
                 self.isPlaying = False
-            # self._do_outputs()
 
     def _do_intro(self):
-        # self.jumper_guy.player_guess(guess)
         print(self.jumper_guy.get_parachute())
         print(self.chosen_word)
         # print(self.blanks)
@@ -83,9 +80,3 @@ class Director:
             # The jumper parachute will be falling
             self.jumper_guy.fallen_jumper()
             print("WRONG!")
-
-        # if chosen_letter
-        # return blanks array
-
-    # def _do_outputs(self):
-    #     print("Output here")
