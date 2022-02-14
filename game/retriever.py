@@ -18,7 +18,8 @@ class Retriever:
         '''
         Set initial word list file name (csv format), lists and arrays via the constructor.
         '''
-        script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
+        script_dir = os.path.dirname(
+            __file__)  # <-- absolute dir the script is in
         relative_path = "words_source.csv"
         absolute_file_path = os.path.join(script_dir, relative_path)
         self._file = absolute_file_path
@@ -120,16 +121,3 @@ class Retriever:
         words_array.append(hidden_letter)
 
         return words_array
-
-
-# --------------------- csv_retriever in practice ----------------
-'''
-## Instantiate Retriever
-r = Retriever()
-
-## set get_word_set to return array containing [0] revealed word, [1] letter count, [2] blanks for letters
-custom_word = r.get_word_set()
-
-## output 
-print(custom_word)
-'''
